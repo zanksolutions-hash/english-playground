@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf0">
+  <title>English Playground — Apprendre en jouant</title>
+  <style>
+    :root{--ink:#24313b;--muted:#64727c;--cream:#fffaf0;--paper:#fff;--orange:#ff8a47;--orange-dark:#e96e2d;--blue:#4f86d9;--blue-pale:#e9f2ff;--green:#36a882;--green-pale:#e4f6ed;--yellow:#ffd869;--line:#ecede9;--shadow:0 18px 55px rgba(43,57,66,.09);--radius:24px}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;line-height:1.5}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #346fca;outline-offset:3px}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 max(22px,calc((100% - 1180px)/2));background:rgba(255,250,240,.92);border-bottom:1px solid rgba(36,49,59,.06);position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}.brand-mark{width:45px;height:45px;display:grid;place-items:center;border-radius:16px;background:#ffe6bf;font-size:25px}.brand strong{display:block;font-size:16px;letter-spacing:-.3px}.brand small{display:block;color:var(--muted);font-size:11px}.top-right{display:flex;align-items:center;gap:18px}.streak{padding:9px 14px;background:#fff;border:1px solid var(--line);border-radius:99px;font-weight:800;font-size:13px}.avatar{width:42px;height:42px;border:0;border-radius:50%;background:#e4f6ed;font-size:22px}.wrap{max-width:1180px;margin:0 auto;padding:34px 24px 70px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:20px;align-items:stretch;margin-bottom:22px}.hero-main{position:relative;overflow:hidden;padding:35px 40px;background:#dff3ec;border-radius:30px;min-height:225px}.eyebrow{text-transform:uppercase;letter-spacing:1.6px;font-weight:900;font-size:11px;color:#387d68}.hero h1{font-size:clamp(30px,4.3vw,48px);line-height:1.08;letter-spacing:-1.5px;margin:12px 0 10px;max-width:540px}.hero p{color:#556a67;margin:0;max-width:465px}.hero-art{position:absolute;right:38px;bottom:18px;font-size:104px;filter:drop-shadow(0 9px 4px rgba(73,103,87,.1));transform:rotate(-5deg)}.hero-stats{display:flex;align-items:flex-end;gap:28px;margin-top:24px}.stat strong{display:block;font-size:18px}.stat span{font-size:11px;color:#57716b}.daily-card{display:flex;flex-direction:column;justify-content:space-between;padding:25px 26px;background:#fff;border:1px solid #f3e9db;border-radius:30px;box-shadow:var(--shadow)}.daily-top{display:flex;justify-content:space-between;align-items:center}.daily-top h2{font-size:16px;margin:0}.daily-icon{font-size:25px}.daily-card p{font-size:13px;color:var(--muted);margin:10px 0 15px}.progress-label{display:flex;justify-content:space-between;font-size:11px;font-weight:800;margin-bottom:7px}.progress-track{height:9px;background:#f1f0ea;border-radius:99px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--orange);border-radius:99px;transition:width .4s}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:36px 0 15px}.section-head h2{margin:0;font-size:23px;letter-spacing:-.5px}.section-head p{margin:4px 0 0;font-size:13px;color:var(--muted)}.level-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:99px;background:#fff;border:1px solid var(--line);font-size:12px;font-weight:800;color:#596773}.lesson-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.lesson-card{position:relative;min-height:195px;padding:21px 22px;border:2px solid transparent;border-radius:24px;text-align:left;color:var(--ink);transition:.18s transform,.18s box-shadow,.18s border-color}.lesson-card:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(43,57,66,.1)}.lesson-card.selected{border-color:var(--ink);box-shadow:0 8px 20px rgba(43,57,66,.09)}.lesson-card[data-theme="classroom"]{background:#fff0da}.lesson-card[data-theme="animals"]{background:#e7f5e9}.lesson-card[data-theme="colors"]{background:#eee9ff}.lesson-card .emoji{font-size:43px;display:block;margin-bottom:13px}.lesson-card .check{position:absolute;right:15px;top:14px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#fff;font-weight:900;color:var(--green);font-size:13px}.lesson-card h3{font-size:17px;margin:0 0 3px}.lesson-card p{font-size:12px;color:var(--muted);margin:0}.lesson-meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:11px;font-weight:800;color:#5f6c70}.play-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0 0}.parent-hint{font-size:12px;color:var(--muted);max-width:540px}.primary-btn,.secondary-btn{border:0;border-radius:15px;padding:14px 20px;font-weight:900;transition:.15s transform,.15s background}.primary-btn{background:var(--orange);color:#fff;box-shadow:0 7px 0 #e77435}.primary-btn:hover{background:var(--orange-dark);transform:translateY(-1px)}.primary-btn:active{transform:translateY(3px);box-shadow:0 3px 0 #e77435}.secondary-btn{background:#fff;color:var(--ink);border:1px solid var(--line)}.secondary-btn:hover{background:#f8f8f5}.btn-arrow{font-size:18px;margin-left:7px}.support-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}.support-card{display:flex;gap:15px;align-items:flex-start;padding:19px;background:#fff;border:1px solid var(--line);border-radius:21px}.support-card .support-icon{font-size:27px}.support-card h3{font-size:14px;margin:0 0 4px}.support-card p{font-size:12px;color:var(--muted);margin:0}.game{display:none;margin-top:28px;padding:clamp(20px,4vw,38px);background:#fff;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}.game.active{display:block}.game-top{display:flex;justify-content:space-between;align-items:center;gap:15px}.game-top strong{font-size:14px}.game-progress{height:8px;flex:1;max-width:300px;background:#f1f0ea;border-radius:99px;overflow:hidden}.game-progress span{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}.game-layout{max-width:760px;margin:34px auto 10px;text-align:center}.game-label{font-weight:900;color:var(--blue);font-size:12px;text-transform:uppercase;letter-spacing:1.2px}.question-art{display:grid;place-items:center;margin:17px auto 12px;width:132px;height:132px;background:#fff2d9;border-radius:35px;font-size:68px}.game-layout h2{font-size:clamp(24px,4vw,33px);margin:8px 0 4px}.game-layout .translation{margin:0;color:var(--muted)}.listen-btn{margin:15px 0 18px;padding:9px 14px;background:var(--blue-pale);color:#3068b8;border:0;border-radius:99px;font-weight:900;font-size:12px}.answers{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:660px;margin:0 auto}.answer-btn{min-height:60px;border:2px solid #e7ebef;border-radius:16px;background:#fff;color:var(--ink);font-size:16px;font-weight:900}.answer-btn:hover{border-color:#aac5ef;background:#f6f9ff}.answer-btn.correct{border-color:#64bd8e;background:#e4f6ed;color:#287354}.answer-btn.wrong{border-color:#e69a8e;background:#fff0ed;color:#b34e40}.answer-btn:disabled{cursor:default}.feedback{min-height:35px;margin:15px 0 3px;font-weight:800;font-size:14px}.feedback.good{color:#2f8a64}.feedback.try{color:#b26a34}.next-row{text-align:center;margin:10px}.complete-state{display:none;text-align:center;padding:34px 15px}.complete-state.active{display:block}.complete-state .trophy{font-size:74px}.complete-state h2{font-size:30px;margin:5px}.complete-state p{color:var(--muted)}.complete-state .primary-btn{margin-top:10px}.footer-note{text-align:center;color:#849097;font-size:11px;margin-top:35px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:760px){.topbar{height:68px;padding:0 16px}.brand-mark{width:40px;height:40px}.top-right{gap:10px}.streak{padding:8px 10px;font-size:11px}.wrap{padding:22px 16px 50px}.hero{grid-template-columns:1fr}.hero-main{padding:27px 25px;min-height:230px}.hero-art{right:20px;bottom:22px;font-size:78px;opacity:.9}.hero h1{max-width:390px}.daily-card{min-height:175px}.lesson-grid{grid-template-columns:1fr;gap:11px}.lesson-card{min-height:140px;padding:18px 18px 16px 88px}.lesson-card .emoji{position:absolute;left:20px;top:24px;font-size:42px}.lesson-card h3{margin-top:2px}.section-head{align-items:start;margin-top:30px}.level-pill{white-space:nowrap}.play-row{align-items:stretch;flex-direction:column-reverse}.play-row .primary-btn{width:100%}.support-row{grid-template-columns:1fr}.answers{grid-template-columns:repeat(2,1fr)}.game-top{flex-wrap:wrap}.game-progress{order:3;max-width:none;flex-basis:100%}.game-layout{margin-top:24px}.question-art{width:112px;height:112px;font-size:58px}.answer-btn{min-height:56px}.game{border-radius:24px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="English Playground, accueil">
+      <span class="brand-mark" aria-hidden="true">🦊</span>
+      <span><strong>English Playground</strong><small>Little steps, big discoveries</small></span>
+    </a>
+    <div class="top-right"><span class="streak" aria-label="Série de jours">🔥 <span id="streakCount">1</span> jour</span><button class="avatar" aria-label="Espace enfant">😊</button></div>
+  </header>
+  <main class="wrap" id="top">
+    <section class="hero" aria-labelledby="welcomeTitle">
+      <div class="hero-main">
+        <div class="eyebrow">Ton petit rendez-vous anglais</div>
+        <h1 id="welcomeTitle">Hello, explorateur !</h1>
+        <p>On apprend l’anglais en jouant, un petit mot à la fois. Prêt pour ta prochaine aventure ?</p>
+        <div class="hero-stats"><div class="stat"><strong><span id="xpCount">0</span> ⭐</strong><span>étoiles gagnées</span></div><div class="stat"><strong><span id="lessonsDone">0</span> / 3</strong><span>thèmes découverts</span></div></div>
+        <span class="hero-art" aria-hidden="true">🦊</span>
+      </div>
+      <aside class="daily-card" aria-label="Défi du jour">
+        <div><div class="daily-top"><h2>Défi du jour</h2><span class="daily-icon" aria-hidden="true">🌟</span></div><p>Fais une petite leçon et gagne tes premières étoiles !</p></div>
+        <div><div class="progress-label"><span>Ton aventure</span><span id="mainProgressLabel">0%</span></div><div class="progress-track" role="progressbar" aria-label="Progression des thèmes" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="mainProgress"></div></div></div>
+      </aside>
+    </section>
+
+    <section aria-labelledby="lessonsTitle">
+      <div class="section-head"><div><h2 id="lessonsTitle">Choisis ton aventure</h2><p>Chaque leçon dure environ 5 minutes.</p></div><span class="level-pill">🎒 Niveau débutant</span></div>
+      <div class="lesson-grid" id="lessonGrid">
+        <button class="lesson-card selected" data-theme="classroom" aria-pressed="true"><span class="check" aria-hidden="true">✓</span><span class="emoji" aria-hidden="true">📚</span><h3>My classroom</h3><p>À l’école, on découvre les objets.</p><span class="lesson-meta"><span>4 mots</span><span>⏱ 5 min</span></span></button>
+        <button class="lesson-card" data-theme="animals" aria-pressed="false"><span class="check" aria-hidden="true" style="display:none">✓</span><span class="emoji" aria-hidden="true">🐻</span><h3>Lovely animals</h3><p>Rencontre de nouveaux amis.</p><span class="lesson-meta"><span>4 mots</span><span>⏱ 5 min</span></span></button>
+        <button class="lesson-card" data-theme="colors" aria-pressed="false"><span class="check" aria-hidden="true" style="display:none">✓</span><span class="emoji" aria-hidden="true">🎨</span><h3>Color party</h3><p>Les couleurs mettent de la joie.</p><span class="lesson-meta"><span>4 mots</span><span>⏱ 5 min</span></span></button>
+      </div>
+      <div class="play-row"><p class="parent-hint">💡 <strong>Pour les parents :</strong> pas besoin de parler anglais. Écoutez ensemble, répétez les mots et amusez-vous !</p><button class="primary-btn" id="startBtn">Commencer la leçon <span class="btn-arrow" aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section class="game" id="game" aria-live="polite" aria-labelledby="gameTitle">
+      <div class="game-top"><button class="secondary-btn" id="exitBtn">← Retour aux leçons</button><strong id="questionCount">Question 1 / 4</strong><div class="game-progress" role="progressbar" aria-label="Progression de la leçon" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="gameProgress"></span></div></div>
+      <div class="game-layout" id="questionState">
+        <div class="game-label">Regarde l’image et trouve le mot anglais</div>
+        <div class="question-art" id="questionEmoji" aria-hidden="true">📘</div>
+        <h2 id="gameTitle">What is it?</h2><p class="translation" id="questionFrench">Comment dit-on « livre » en anglais ?</p>
+        <button class="listen-btn" id="listenBtn" aria-label="Écouter la prononciation">🔊 Écouter le mot</button>
+        <div class="answers" id="answerGrid"></div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+        <div class="next-row"><button class="primary-btn" id="nextBtn" style="display:none">Question suivante →</button></div>
+      </div>
+      <div class="complete-state" id="completeState"><div class="trophy" aria-hidden="true">🏆</div><h2>Brilliant work!</h2><p id="completeMessage">Tu as terminé cette leçon.</p><button class="primary-btn" id="backToLessons">Choisir une autre aventure</button></div>
+    </section>
+
+    <section class="support-row" aria-label="Aide pour apprendre">
+      <article class="support-card"><span class="support-icon" aria-hidden="true">👂</span><div><h3>Écoute et répète</h3><p>Appuie sur le bouton audio pour entendre chaque mot en anglais.</p></div></article>
+      <article class="support-card"><span class="support-icon" aria-hidden="true">💛</span><div><h3>Apprendre sans pression</h3><p>On peut se tromper, réessayer et progresser à son rythme.</p></div></article>
+    </section>
+    <p class="footer-note">Prototype de départ · Les progrès sont enregistrés uniquement sur cet appareil.</p>
+  </main>
+  <script>
+    const lessons = {
+      classroom:{title:"My classroom",items:[{en:"book",fr:"livre",emoji:"📘"},{en:"pencil",fr:"crayon",emoji:"✏️"},{en:"backpack",fr:"cartable",emoji:"🎒"},{en:"ruler",fr:"règle",emoji:"📏"}]},
+      animals:{title:"Lovely animals",items:[{en:"cat",fr:"chat",emoji:"🐱"},{en:"dog",fr:"chien",emoji:"🐶"},{en:"rabbit",fr:"lapin",emoji:"🐰"},{en:"bear",fr:"ours",emoji:"🐻"}]},
+      colors:{title:"Color party",items:[{en:"red",fr:"rouge",emoji:"🔴"},{en:"blue",fr:"bleu",emoji:"🔵"},{en:"yellow",fr:"jaune",emoji:"🟡"},{en:"green",fr:"vert",emoji:"🟢"}]}
+    };
+    const allWords=Object.values(lessons).flatMap(lesson=>lesson.items);
+    const saved=JSON.parse(localStorage.getItem("englishPlaygroundProgress")||"{}");
+    const progress={xp:saved.xp||0,done:saved.done||[],streak:saved.streak||1};
+    let selectedTheme="classroom", questionIndex=0, answered=false;
+    const $=selector=>document.querySelector(selector);
+    function save(){localStorage.setItem("englishPlaygroundProgress",JSON.stringify(progress));}
+    function refreshStats(){
+      $("#xpCount").textContent=progress.xp;
+      $("#lessonsDone").textContent=progress.done.length;
+      $("#streakCount").textContent=progress.streak;
+      const percent=Math.round(progress.done.length/3*100);
+      $("#mainProgress").style.width=percent+"%";
+      $("#mainProgressLabel").textContent=percent+"%";
+      $(".daily-card [role=progressbar]").setAttribute("aria-valuenow",percent);
+      document.querySelectorAll(".lesson-card").forEach(card=>{
+        const isDone=progress.done.includes(card.dataset.theme);
+        card.querySelector(".check").style.display=isDone?"grid":"none";
+        card.querySelector(".lesson-meta span").textContent=isDone?"✓ Découverte":"4 mots";
+      });
+    }
+    function speak(word){
+      if(!("speechSynthesis" in window)){$("#feedback").textContent="L’audio n’est pas disponible sur ce navigateur.";return;}
+      window.speechSynthesis.cancel();
+      const utterance=new SpeechSynthesisUtterance(word);
+      utterance.lang="en-GB";utterance.rate=.82;
+      window.speechSynthesis.speak(utterance);
+    }
+    function startLesson(){
+      questionIndex=0;answered=false;
+      $("#game").classList.add("active");
+      $("#questionState").style.display="block";
+      $("#completeState").classList.remove("active");
+      $("#game").scrollIntoView({behavior:"smooth",block:"start"});
+      renderQuestion();
+    }
+    function renderQuestion(){
+      const lesson=lessons[selectedTheme], item=lesson.items[questionIndex];
+      answered=false;
+      $("#questionCount").textContent="Question "+(questionIndex+1)+" / "+lesson.items.length;
+      const pct=Math.round(questionIndex/lesson.items.length*100);
+      $("#gameProgress").style.width=pct+"%";
+      $("#gameProgress").parentElement.setAttribute("aria-valuenow",pct);
+      $("#questionEmoji").textContent=item.emoji;
+      $("#gameTitle").textContent="What is it?";
+      $("#questionFrench").textContent="Comment dit-on « "+item.fr+" » en anglais ?";
+      $("#feedback").textContent="";$("#feedback").className="feedback";
+      $("#nextBtn").style.display="none";
+      const distractors=lessons[selectedTheme].items.filter(word=>word.en!==item.en);
+      const choices=[item,...distractors].sort((a,b)=>a.en.localeCompare(b.en));
+      $("#answerGrid").innerHTML=choices.map(choice=>"<button class=\"answer-btn\" data-word=\""+choice.en+"\">"+choice.en+"</button>").join("");
+      document.querySelectorAll(".answer-btn").forEach(button=>button.addEventListener("click",()=>checkAnswer(button,item)));
+    }
+    function checkAnswer(button,item){
+      if(answered)return;
+      if(button.dataset.word!==item.en){
+        button.classList.add("wrong");
+        $("#feedback").textContent="Almost! Essaie encore 😊";
+        $("#feedback").className="feedback try";
+        return;
+      }
+      answered=true;button.classList.add("correct");
+      document.querySelectorAll(".answer-btn").forEach(option=>{option.disabled=true;});
+      progress.xp+=10;save();refreshStats();
+      $("#feedback").textContent="Excellent ! « "+item.en+" » veut dire « "+item.fr+" ». +10 étoiles ⭐";
+      $("#feedback").className="feedback good";
+      speak(item.en);
+      $("#nextBtn").textContent=questionIndex===lessons[selectedTheme].items.length-1?"Terminer la leçon ✓":"Question suivante →";
+      $("#nextBtn").style.display="inline-block";
+    }
+    function finishLesson(){
+      const lesson=lessons[selectedTheme];
+      if(!progress.done.includes(selectedTheme))progress.done.push(selectedTheme);
+      save();refreshStats();
+      $("#questionState").style.display="none";
+      $("#completeState").classList.add("active");
+      $("#completeMessage").textContent="Tu as appris "+lesson.items.length+" nouveaux mots avec « "+lesson.title+" ». Reviens bientôt pour une autre aventure !";
+      $("#gameProgress").style.width="100%";
+      $("#gameProgress").parentElement.setAttribute("aria-valuenow",100);
+    }
+    document.querySelectorAll(".lesson-card").forEach(card=>card.addEventListener("click",()=>{
+      selectedTheme=card.dataset.theme;
+      document.querySelectorAll(".lesson-card").forEach(other=>{const selected=other===card;other.classList.toggle("selected",selected);other.setAttribute("aria-pressed",selected);});
+    }));
+    $("#startBtn").addEventListener("click",startLesson);
+    $("#listenBtn").addEventListener("click",()=>speak(lessons[selectedTheme].items[questionIndex].en));
+    $("#nextBtn").addEventListener("click",()=>{if(questionIndex<lessons[selectedTheme].items.length-1){questionIndex++;renderQuestion();}else{finishLesson();}});
+    $("#exitBtn").addEventListener("click",()=>{$("#game").classList.remove("active");$("#game").scrollIntoView({behavior:"smooth",block:"center"});});
+    $("#backToLessons").addEventListener("click",()=>{$("#game").classList.remove("active");$("#top").scrollIntoView({behavior:"smooth"});});
+    refreshStats();
+  </script>
+</body>
+</html>
